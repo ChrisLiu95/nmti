@@ -40,16 +40,30 @@ function tierToNum(t: DimScore): number {
   return t === 'L' ? 0 : t === 'M' ? 1 : 2
 }
 
-// Continuous distance: user's raw scores vs personality's L/M/H target
+// Probability-weighted distance: normalizes by expected random distance per tier
+// so that M-heavy profiles don't dominate just because M is statistically common.
+//
+// Under uniform answering (scores {2,3,5,6}):
+//   E[|raw − 0|] = 1.0     (L target — far from center)
+//   E[|raw − 1|] = 0.4375  (M target — near center, easy to match by chance)
+//   E[|raw − 2|] = 1.0     (H target — far from center)
+//
+// Dividing by E[d] normalizes expected distance to 1.0 per dim for all tiers.
+const TIER_WEIGHT: Record<DimScore, number> = { L: 1 / 1.0, M: 1 / 0.4375, H: 1 / 1.0 }
+
 function continuousDistance(rawProfile: number[], typeProfile: Profile): number {
   return rawProfile.reduce(
-    (sum, val, i) => sum + Math.abs(val - tierToNum(typeProfile[i])),
+    (sum, val, i) => {
+      const tier = typeProfile[i]
+      return sum + TIER_WEIGHT[tier] * Math.abs(val - tierToNum(tier))
+    },
     0
   )
 }
 
-// Max possible distance = 18 * 2 = 36
-const MAX_DISTANCE = 36
+// Max weighted distance ≈ 18 * 2 * max(weight) ≈ 18 * 2 * 2.286 ≈ 82.3
+// Use a representative max so matchPct stays meaningful
+const MAX_DISTANCE = 18 * 2 * (1 / 0.4375)
 
 // FIRE: financially free
 function isFIRE(profile: Profile): boolean {
