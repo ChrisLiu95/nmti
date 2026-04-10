@@ -208,6 +208,43 @@ body {
   font-weight: 500;
 }
 
+/* Stats (welcome screen) */
+.email-stats {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.email-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 0;
+  background: #141414;
+  border: 1px solid #1e1e1e;
+  border-radius: 10px;
+}
+
+.email-stat-num {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f0883e, #f47067);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.email-stat-label {
+  font-size: 11px;
+  color: #666;
+  letter-spacing: 0.5px;
+}
+
 /* Scope / tags */
 .email-scope {
   margin-bottom: 18px;
@@ -626,6 +663,17 @@ body {
   border: 1px solid #f0883e44;
 }
 
+.rarity-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border: 1px solid #f0883e44;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #f0883e;
+  margin-bottom: 16px;
+  letter-spacing: 0.3px;
+}
+
 .result-tagline {
   font-size: 15px;
   color: #8b8685;
@@ -816,6 +864,22 @@ body {
   transition: opacity 0.15s;
 }
 .btn-share:hover { opacity: 0.9; }
+
+.btn-share-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: transparent;
+  border: 1px solid #f0883e44;
+  border-radius: 8px;
+  color: #f0883e;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-share-text:hover { background: #f0883e11; }
 
 .btn-restart {
   display: inline-flex;
@@ -1191,9 +1255,31 @@ body {
   line-height: 1.4;
 }
 
+/* ── Back to primary button ──────────────────────────────────── */
+.back-primary-btn {
+  display: block;
+  margin: 0 auto 16px;
+  padding: 6px 16px;
+  background: transparent;
+  border: 1px solid #f0883e66;
+  border-radius: 6px;
+  color: #f0883e;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.back-primary-btn:hover {
+  background: #f0883e11;
+}
+
 /* ── Top 3 Matches ───────────────────────────────────────────── */
 .top-matches-block {
   margin-bottom: 24px;
+}
+.analysis-hint {
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 8px;
 }
 
 .top-match-row {
@@ -1205,10 +1291,17 @@ body {
   border: 1px solid #222;
   margin-bottom: 6px;
   border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
 }
 
-.top-match-row.top-match-primary {
-  border-color: #f0883e44;
+.top-match-row:hover {
+  border-color: #f0883e66;
+  background: #1f1510;
+}
+
+.top-match-row.top-match-active {
+  border-color: #f0883e;
   background: #1a1510;
 }
 
@@ -1221,7 +1314,7 @@ body {
   flex-shrink: 0;
 }
 
-.top-match-primary .top-match-rank {
+.top-match-active .top-match-rank {
   color: #f0883e;
 }
 
@@ -1270,6 +1363,109 @@ body {
   width: 36px;
   text-align: right;
   flex-shrink: 0;
+}
+
+/* ── Share Card Overlay ──────────────────────────────────────── */
+.share-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.share-card-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.share-canvas {
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  height: auto;
+}
+
+.share-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-save-card {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #f0883e, #f47067);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-save-card:hover { opacity: 0.9; }
+
+.btn-close-card {
+  padding: 10px 24px;
+  background: transparent;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #8b8685;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-close-card:hover { border-color: #666; color: #aaa; }
+
+/* ── Workplace Relationships ────────────────────────────────── */
+.relations-block {
+  margin-bottom: 24px;
+}
+
+.relation-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #1a1a1a;
+  border: 1px solid #222;
+  margin-bottom: 6px;
+  border-radius: 8px;
+}
+
+.relation-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+}
+
+.relation-info {
+  flex: 1;
+}
+
+.relation-label {
+  font-size: 11px;
+  color: #555;
+}
+
+.relation-name {
+  font-family: 'SF Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #e6e1df;
+}
+
+.relation-reason {
+  font-size: 12px;
+  color: #8b8685;
+  margin-top: 2px;
 }
 
 /* ── Responsive ───────────────────────────────────────────────── */

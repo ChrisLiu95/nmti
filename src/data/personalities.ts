@@ -16,6 +16,9 @@ export const personalities: PersonalityType[] = [
     description: '你是公司里最早到最晚走的人形永动机。你的工位有两杯咖啡——一杯今天的，一杯昨天忘喝的。你的日历从早 8 排到晚 10 没有一个空隙，中午吃饭你叫"移动办公"。同事觉得你卷，领导觉得你"有冲劲"，你自己觉得"我只是认真"。你妈觉得你在拿命换钱。你的体检报告比你的 KPI 更需要关注。',
     growth: '你的价值不需要用工时来证明。试试每天准时走一次，你会发现公司不会因此倒闭。',
     profile: ['L','L','H','H','H','H','M','M','H','H','H','M','L','L','L','H','M','L'],
+    rarity: 4.2,
+    nemesis: 'FISH', nemesisReason: '你在拼命，他在摸鱼',
+    soulmate: 'GRND', soulmateReason: '都是闷头干活的命',
   },
   {
     code: 'FISH',
@@ -24,6 +27,9 @@ export const personalities: PersonalityType[] = [
     description: '你把"摸鱼"修炼成了一门功夫。Excel 里藏着小说、浏览器 18 个标签页只有 1 个在干活但标题全是《Q3用户增长策略.xlsx》。你上厕所能刷半小时手机还能完美避开领导的巡查路线——因为你摸透了他的动线。最厉害的是，你的活居然也没落下，因为你深谙帕累托法则：80%的工作只需要 20%的时间。剩下 80%的时间？那是你的。',
     growth: '你这么聪明却把才华花在摸鱼上——有没有什么事是你愿意"不摸鱼"去做的？那可能才是你该干的事。',
     profile: ['H','H','L','L','L','L','M','H','M','L','L','L','M','M','M','L','L','H'],
+  rarity: 3.2,
+    nemesis: '996X', nemesisReason: '他卷得你不得安宁',
+    soulmate: 'ZOOM', soulmateReason: '远程摸鱼双子星',
   },
   {
     code: 'QUIT',
@@ -31,7 +37,10 @@ export const personalities: PersonalityType[] = [
     tagline: '辞职信在心里写了 800 遍，身体还在工位上打卡。',
     description: '你没有辞职，但你的灵魂上周五就提了离职申请。每天准点到准点走，需求来了做完就完，不主动不拒绝不加戏。你的工位干净得像样板间——因为你没有任何要在这里扎根的打算。你不是不会干活，你是看透了：干多干少一个样，不如把精力留给下班后的真实人生。你的微信状态写着"在线"，但你的灵魂写着"已读不回"。',
     growth: '精神离职是自我保护没错，但长期下来你会麻木到连自己喜欢什么都忘了。要么走，要么找到一个值得你投入的理由。',
-    profile: ['M','H','L','L','L','L','M','M','M','L','L','L','M','L','H','L','H','M'],
+    profile: ['M','H','L','L','L','L','M','M','M','L','L','L','M','M','M','L','H','M'],
+  rarity: 3,
+    nemesis: 'WOLF', nemesisReason: '你看透了他还在信',
+    soulmate: 'BURN', soulmateReason: '都是从热血走向沉默',
   },
   {
     code: 'PPT',
@@ -40,6 +49,9 @@ export const personalities: PersonalityType[] = [
     description: '你深谙职场的终极真理：干得好不如说得好。你的 PPT 精美得可以拿去参加设计比赛，你的汇报逻辑清晰得像 TED 演讲。一件普通的事经过你的嘴变成了"战略级创新"，一个 Excel 表格经过你的手变成了"数据驱动的增长飞轮"。领导最爱你——每次需要给上面交差的时候，你的材料永远最靠谱。至于实际产出嘛……你的 PPT 就是产出。',
     growth: '表达能力是真的强。但总有一天领导会翻到 PPT 背后——确保那里不是空的。',
     profile: ['M','M','M','H','H','M','M','L','M','H','H','H','M','L','L','M','L','L'],
+  rarity: 4.8,
+    nemesis: 'GRND', nemesisReason: '你抢了他的功劳',
+    soulmate: 'MASK', soulmateReason: '表演系双学位',
   },
   {
     code: 'GRND',
@@ -47,7 +59,10 @@ export const personalities: PersonalityType[] = [
     tagline: '做的最多、说的最少、功劳全是别人的。年度最佳背景板。',
     description: '你是团队里默默扛最多活的人。脏活累活都你的，别人不想做的事落到你头上，你也"行吧"就接了。但升职加薪时，名单上没你——因为领导看到的是那个 PPT 做得最漂亮的人，不是那个代码写得最多的人。你不是不委屈，你是不知道怎么开口。你坚信"做好了领导自然会看到"，但你忽略了一个残酷的现实：领导很忙，他只看到主动出现在他视线里的人。',
     growth: '你的实力不需要证明，但需要被看见。学一点向上管理不是虚伪，是让你的 996 不白费。',
-    profile: ['L','L','H','H','H','L','H','L','H','L','L','L','L','L','L','H','H','L'],
+    profile: ['L','L','H','H','H','M','H','L','H','L','L','L','L','L','L','H','H','L'],
+  rarity: 3.8,
+    nemesis: 'PPT', nemesisReason: '活你干的，功他领的',
+    soulmate: 'TOOL', soulmateReason: '老实人互助联盟',
   },
   {
     code: 'WOLF',
@@ -56,6 +71,9 @@ export const personalities: PersonalityType[] = [
     description: '你是公司文化的虔诚信徒。老板说要有狼性你就嚎两嗓子，公司说要感恩你就真觉得感恩，团建时你的口号喊得最响。你不是不聪明，你是选择了全情投入——你相信公司不会亏待真心付出的人。你的年终总结标题是"与公司同行，共筑未来"，你的微信头像是公司 logo，你的每日签到打卡截图发到了朋友圈。你是管理层最爱的兵，也是同事私下group里讨论最多的人。',
     growth: '忠诚值得尊重。但要分清你忠诚的是事业还是某个人。公司不会因为你忠诚就不裁你——这不是背叛，是现实。',
     profile: ['L','L','H','H','H','H','H','L','H','M','H','H','L','L','L','H','L','L'],
+  rarity: 4.2,
+    nemesis: 'PUNK', nemesisReason: '你喊口号他翻白眼',
+    soulmate: '996X', soulmateReason: '卷在同一条战壕里',
   },
   {
     code: 'PUNK',
@@ -64,6 +82,9 @@ export const personalities: PersonalityType[] = [
     description: '你是办公室里最清醒的人——或者最刺头的人，取决于谁在评价。你不接受无偿加班、不吃 PUA 那套、遇到不公平会直接说出来。你的备忘录里存着《劳动法》重点条款截图，你关注了 8 个劳动仲裁博主，你知道经济补偿金的计算方式比 HR 还熟。你不是不想好好干活，你只是拒绝被"情怀""格局""感恩"这些词白嫖。',
     growth: '你的清醒是稀缺品质。但表达方式决定你是"勇者"还是"刺头"——策略和原则并不矛盾。',
     profile: ['M','H','M','L','L','L','L','H','L','L','L','L','H','M','M','L','L','H'],
+  rarity: 3.6,
+    nemesis: 'WOLF', nemesisReason: '他的忠诚让你窒息',
+    soulmate: 'FREE', soulmateReason: '都在守护打工人底线',
   },
   {
     code: 'FAKE',
@@ -72,6 +93,9 @@ export const personalities: PersonalityType[] = [
     description: '你是职场表演学的天花板。你的屏幕永远是工作界面（其实是截图当壁纸），你走路永远带着小跑节奏暗示"我有重要会议"，你偶尔皱着眉看电脑的样子像是在推敲一个关乎公司命运的决策——实际上你在纠结中午吃麻辣烫还是黄焖鸡。你把"看起来很忙"这件事做到了行为艺术级别，而且确实有效：领导经过你工位从来不会多看一眼。',
     growth: '你的演技已经影帝级了。如果把同样的精力花在真正感兴趣的事上，你早就是你那个领域的大佬了。',
     profile: ['H','M','M','L','L','L','M','M','M','M','H','M','L','L','M','L','M','L'],
+  rarity: 3.7,
+    nemesis: 'LEAN', nemesisReason: '你在演他都懒得演',
+    soulmate: 'VIBE', soulmateReason: '快乐表面功夫搭档',
   },
   {
     code: 'SIDE',
@@ -80,6 +104,9 @@ export const personalities: PersonalityType[] = [
     description: '你对主业的态度是"完成即可"——你真正的激情在下班之后。你可能在做自媒体、搞电商、接私活、玩加密货币，或者同时做以上所有。上班时间你的脑子有 30%在处理工作、70%在想副业的事。你的手机备忘录里有 12 个项目计划，你的浏览器书签比你的工作文档还多。你的副业可能还没赚到大钱，但你投入的热情是主业见都没见过的。',
     growth: '如果副业让你更快乐，认真想想它什么时候可以变成主业。永远脚踏两条船是最消耗的活法。',
     profile: ['H','H','M','L','L','L','L','M','L','L','L','L','M','H','M','L','L','H'],
+  rarity: 4.5,
+    nemesis: 'SLAV', nemesisReason: '他太听话你太分心',
+    soulmate: 'PUNK', soulmateReason: '都不把主业当回事',
   },
   {
     code: 'FLAT',
@@ -87,7 +114,10 @@ export const personalities: PersonalityType[] = [
     tagline: '不是不努力，是想通了。工资到账就是胜利。',
     description: '你悟了。人生不是只有"上进"这一种活法。你不卷、不争、不焦虑、不 FOMO。别人升职你鼓掌，别人跳槽你围观，别人在群里 battle 你在角落吃瓜。你每个月最幸福的时刻是工资到账的那一秒——它意味着你又成功地活过了 30 天。你不是没能力，你是主动选择了省电模式。你把"躺平"活成了一种生活哲学。',
     growth: '躺平没错，但完全停止充电会让未来选项越来越少。偶尔学点新东西不是为了卷，是为了保留说"不干了"的底气。',
-    profile: ['M','H','L','L','L','L','M','M','H','L','L','L','L','L','H','L','L','M'],
+    profile: ['M','H','L','L','L','L','M','M','H','L','L','L','L','L','H','L','L','L'],
+  rarity: 3,
+    nemesis: 'FOMO', nemesisReason: '他的焦虑让你替他累',
+    soulmate: 'MONK', soulmateReason: '躺平与佛系殊途同归',
   },
   {
     code: 'JUMP',
@@ -96,6 +126,9 @@ export const personalities: PersonalityType[] = [
     description: '你的每份工作平均保质期不超过 18 个月。不是你不行，是你总觉得"下一家更好"。每到蜜月期一过，你就开始觉得"不过如此"，Boss 直聘的推送比钉钉还准时。猎头都认识你了，有的还加了你微信。你的面试技巧已经炉火纯青——自我介绍能根据公司风格实时切换三个版本。你在每家公司都是快速出活然后潇洒离开的那种人。',
     growth: '每跳一次确实能涨薪，但跳太多之后简历比你先累了。试着在一个地方深耕一次，感受一下"复利"的力量。',
     profile: ['M','M','M','M','L','H','L','H','L','M','M','M','H','M','L','M','M','M'],
+  rarity: 6.4,
+    nemesis: 'IDOL', nemesisReason: '你想跑他拉着你扛',
+    soulmate: 'GOLD', soulmateReason: '简历至上主义兄弟',
   },
   {
     code: 'COPE',
@@ -104,6 +137,9 @@ export const personalities: PersonalityType[] = [
     description: '你的大脑是一台 7×24 永不关机的焦虑处理器。白天焦虑工作有没有做好，晚上焦虑人生有没有意义，周末焦虑为什么周末过得这么快。领导 @你一下你能脑补出五种灾难场景（从裁员到项目暴雷到你上周的摸鱼记录被发现），同事随口一句"你最近忙不忙"你能分析三天的潜台词。你其实挺能干的，但有一半的能量被脑内小剧场消耗掉了。',
     growth: '你的敏感是超能力，但也是最大的电量消耗。试试把"我是不是不行"换成"我今天做了哪些还不错的事"。',
     profile: ['L','L','L','M','M','M','M','L','M','L','L','L','M','M','M','H','H','H'],
+  rarity: 5.4,
+    nemesis: 'FLAT', nemesisReason: '你内耗他无所谓',
+    soulmate: 'PLAN', soulmateReason: '焦虑+拖延最佳损友',
   },
   {
     code: 'BURN',
@@ -111,7 +147,10 @@ export const personalities: PersonalityType[] = [
     tagline: '曾经的卷王，如今的电量 5%。',
     description: '你以前是那种满腔热血的员工——主动加班、冲在最前面、项目群里凌晨还在回消息。然后有一天，你燃尽了。现在的你看到钉钉消息会心悸，听到"紧急需求"想吐，"我们来 sync 一下"这句话让你有生理性不适。你不是变懒了——你是过度消耗之后的正常宕机。你的电量长期维持在 5%，只够维持最低限度的生命活动。你不是不想努力，是努力的那根弦已经断了。',
     growth: '你的燃尽不是你的错，是系统的问题。允许自己休息不等于放弃。好好睡一觉比任何时间管理课都管用。',
-    profile: ['M','M','L','L','L','L','M','M','H','L','L','L','M','L','H','M','H','M'],
+    profile: ['M','M','L','L','L','L','M','L','H','L','L','L','M','L','H','M','H','M'],
+  rarity: 4,
+    nemesis: '996X', nemesisReason: '你的过去式是他的现在时',
+    soulmate: 'QUIT', soulmateReason: '一起在工位上发呆',
   },
   {
     code: 'VIBE',
@@ -120,6 +159,9 @@ export const personalities: PersonalityType[] = [
     description: '你是办公室的社交 Wi-Fi。谁过生日你记得最清楚、中午吃什么你组织得最积极、下午茶你拼单最快、八卦你吃得最多。你的存在让这个部门有了"人情味"，新人入职第一个加的微信一定是你。但如果要说你具体负责什么业务……好像也说不太清楚。没关系，你让所有人都开心了，快乐本身也是一种生产力——虽然 OKR 里写不了这个。',
     growth: '你的情商和人缘是稀缺资源。但也确保自己有一项"硬技能"打底，光靠氛围走不完整个职业生涯。',
     profile: ['M','M','M','M','L','L','M','M','M','M','H','H','L','L','M','M','L','M'],
+  rarity: 4.1,
+    nemesis: 'ZOOM', nemesisReason: '你组团他隐身',
+    soulmate: 'FAKE', soulmateReason: '都靠氛围感生存',
   },
   {
     code: 'MASK',
@@ -128,6 +170,9 @@ export const personalities: PersonalityType[] = [
     description: '你掌握了职场最强超能力——在不同人面前秒切人设。对领导你是积极上进的奋斗者、对同事你是随和好说话的老好人、对下属你是雷厉风行的leader、对甲方你是专业得体的乙方……你不觉得这是"虚伪"，你管这叫"情商"。你的微信分组比你的工作项目还多。你活得很累但升得很快——因为每个人都觉得你是"自己人"。',
     growth: '角色切换是能力。但别忘了所有面具后面那个真的你——偶尔对亲近的人卸下面具，他们能接住。',
     profile: ['M','M','M','H','L','H','M','H','M','H','H','H','M','L','L','M','M','L'],
+  rarity: 3.9,
+    nemesis: 'MONK', nemesisReason: '你千面他无相',
+    soulmate: 'PPT', soulmateReason: '职场表演系同门',
   },
   {
     code: 'LEAN',
@@ -135,7 +180,10 @@ export const personalities: PersonalityType[] = [
     tagline: '需求文档写几条我就做几条。多一行？加钱。',
     description: '你是精确执行的教科书。领导说做 A 你就做 A，绝不做到 A+，也不会只做 A-。你不会主动加戏、不会"顺便优化一下"、不会"我觉得还可以加个XX功能"。你的工作哲学可以浓缩成八个字：拿多少钱，干多少事。这不是懒——这是精确到个位数的能量管理。你的代码（或方案或表格）永远不多不少刚刚好，像一台精密的瑞士手表。',
     growth: '精确有精确的美。但偶尔"多做一点点"可能会带来意想不到的机会——不是所有额外付出都是免费劳动。',
-    profile: ['L','M','M','L','L','L','M','M','L','L','L','L','L','L','M','L','L','H'],
+    profile: ['L','M','M','L','L','L','M','H','L','L','L','L','L','L','M','L','L','H'],
+  rarity: 2.8,
+    nemesis: 'TOOL', nemesisReason: '他什么都接你什么都拒',
+    soulmate: 'FREE', soulmateReason: '边界感守护者联盟',
   },
   {
     code: 'GOLD',
@@ -144,6 +192,9 @@ export const personalities: PersonalityType[] = [
     description: '你把职业生涯当成一个精心策划的投资组合。每次跳槽都是为了更好的 title、每个项目都是为了简历上多一行亮点、每次行业社交都在积累人脉资产。你不是在"打工"，你是在"投资自己"。你的 LinkedIn 更新频率比朋友圈还高，你的自我介绍能根据场景切三个版本。你在每家公司待的时间精确到刚好能写进简历，又不会长到让自己厌倦。',
     growth: '战略规划没错。但如果每一步都在算ROI，你可能会错过一些不在计划内但真正有意义的事。',
     profile: ['L','L','H','H','M','H','M','H','M','H','M','H','H','M','L','M','M','L'],
+  rarity: 5.3,
+    nemesis: 'GRND', nemesisReason: '你镀金他苦干',
+    soulmate: 'JUMP', soulmateReason: '一起经营LinkedIn',
   },
   {
     code: 'FREE',
@@ -152,6 +203,9 @@ export const personalities: PersonalityType[] = [
     description: '你对"work-life balance"的虔诚超越了任何宗教。六点钟一到你已经在电梯里了——不是走的，是飘的。手机通知在下班那一秒切到静音，钉钉消息可以等到明天，领导的"有空吗"等于"没空"。你的晚上被健身、做饭、追剧、约朋友安排得满满当当。你不是不敬业，你是把 24 小时分配得非常科学——公司买的是你 8 小时，剩下 16 小时不卖。',
     growth: '你对边界的坚守让所有社畜羡慕。只是确保你不是在"逃离"工作，而是真的在"奔向"生活。',
     profile: ['M','H','L','L','L','L','L','H','M','L','L','L','L','L','M','L','M','H'],
+  rarity: 3.1,
+    nemesis: 'IDOL', nemesisReason: '他还没走你已消失',
+    soulmate: 'PUNK', soulmateReason: '下班自由统一战线',
   },
   {
     code: 'MONK',
@@ -159,7 +213,10 @@ export const personalities: PersonalityType[] = [
     tagline: '升职加薪随缘，裁员传闻岿然不动。万事皆空，工资到账就行。',
     description: '你是办公室里最让人安心的存在。不争不抢不攀比不焦虑，需求来了就做，没事就看看闲书。同事互撕你劝和，领导发火你微笑，裁员传闻你岿然不动。你不是无欲无求——你只是在一个更高的维度看待职场这些事。当然也有可能你是真的不在乎。这两种解读你觉得都可以。你看，这就是佛系。',
     growth: '佛系是智慧。但当真正重要的事出现时——比如你的利益真的被侵犯了——允许自己认真一回。',
-    profile: ['M','M','M','L','L','L','M','M','H','L','L','L','L','L','M','L','L','M'],
+    profile: ['M','M','M','L','L','L','H','M','H','L','L','L','L','L','M','L','L','M'],
+  rarity: 2.8,
+    nemesis: 'COPE', nemesisReason: '你看开了他想不开',
+    soulmate: 'FLAT', soulmateReason: '无欲无求双人组',
   },
   {
     code: 'ZOOM',
@@ -168,6 +225,9 @@ export const personalities: PersonalityType[] = [
     description: '远程办公是你的主场，你在这里如鱼得水。摄像头永远"坏着"、麦克风恰好有"回音"、网络总在你要发言的时候"卡了"。你把"在线但隐身"修炼到了极致——钉钉永远绿灯在线，但你人在做饭、遛狗、或者在另一台电脑上打游戏。会议你全程静音，但每隔 20 分钟会打一个字："同意"，以此证明你的存在。',
     growth: '隐身保护了你的自由，但也可能让你变成组织里的"透明人"。偶尔开个麦，说句有见地的话，性价比极高。',
     profile: ['H','H','M','L','L','L','M','M','M','L','L','L','L','L','M','L','M','M'],
+  rarity: 2.1,
+    nemesis: 'VIBE', nemesisReason: '你静音他 @全员',
+    soulmate: 'FISH', soulmateReason: '线上线下摸鱼CP',
   },
   {
     code: 'FOMO',
@@ -176,6 +236,9 @@ export const personalities: PersonalityType[] = [
     description: '你的焦虑来源就一句话："别人在做但我没做。"同事考了 PMP 你也想考、朋友学了 AI 你也报班、同学去了大厂你开始怀疑人生。你的收藏夹有 200 个"必看""必学""必读"的链接，待读书单能排到 2035 年，B站"稍后再看"里有 800 个视频。你不是不优秀，你只是在信息洪流里丧失了锚点——什么都想抓，结果什么都抓不住。',
     growth: '焦虑的本质是"想要太多，精力太少"。选一件事做到 80 分，比十件事都停在收藏夹里强。',
     profile: ['L','L','M','M','M','H','M','L','M','M','M','M','H','M','L','M','H','M'],
+  rarity: 4.8,
+    nemesis: 'MONK', nemesisReason: '你焦虑他佛系',
+    soulmate: 'COPE', soulmateReason: '一起在收藏夹里内耗',
   },
   {
     code: 'TOOL',
@@ -184,6 +247,9 @@ export const personalities: PersonalityType[] = [
     description: '你是全公司的万能胶水。电脑坏了找你、PPT 不会做找你、Excel 公式写不出来找你、打印机卡纸找你、团建订餐找你、搬办公室搬东西还是找你。你来者不拒——"举手之劳嘛"。但你没发现，你的本职工作已经被这些"举手之劳"挤到了加班才能做完，而升职名单里从来没有"全公司最好用的人"这个奖项。大家都说你是"好人"，但好人卡兑换不了晋升。',
     growth: '善良不等于没边界。学会说"我手上有事，你问问XX吧"——这不是冷漠，是自我保护。',
     profile: ['L','M','H','M','M','L','M','L','H','L','M','L','L','L','L','M','M','L'],
+  rarity: 3.8,
+    nemesis: 'LEAN', nemesisReason: '你全接他全拒',
+    soulmate: 'GRND', soulmateReason: '老好人抱团取暖',
   },
   {
     code: 'SLAV',
@@ -191,7 +257,10 @@ export const personalities: PersonalityType[] = [
     tagline: '让加班就加班，让出差就出差。"好的收到"是我说过最多的四个字。',
     description: '你是管理者的梦中情人。让你做什么就做什么，从不说不，加班不抱怨，出差不推脱，需求变了不发火。"好的""收到""马上"是你的三大常用语。你不是没有想法——你只是觉得"先做好手上的事再说别的"。你的可靠让所有人放心，你的沉默也让所有人忽略了你的需求。你是一台不会报错的服务器，稳定到大家忘了你也需要维护。',
     growth: '可靠是你的优势。但偶尔表达一下自己的想法，不会让你失分，反而会让人更重视你——因为"沉默的人开口了"自带权重。',
-    profile: ['L','L','H','L','H','L','H','L','H','M','L','L','L','L','L','H','L','L'],
+    profile: ['L','L','H','L','H','L','H','L','H','M','L','M','L','L','L','H','L','L'],
+  rarity: 3.9,
+    nemesis: 'PUNK', nemesisReason: '你说好的他说凭什么',
+    soulmate: 'WOLF', soulmateReason: '服从性拉满二人组',
   },
   {
     code: 'PLAN',
@@ -200,6 +269,9 @@ export const personalities: PersonalityType[] = [
     description: '你是计划的巨人、行动的矮子。备忘录里 47 个"下一步计划"、笔记软件里 12 个"未来项目"、Notion 里 8 个"要启动的事"——真正开始的：0 个。你不是拖延——你是追求完美。你总觉得时机还没到、方案还不够好、准备还不够充分、还需要再看三个竞品分析、再读两本书、再做一版计划。你最擅长的事是"准备开始"。',
     growth: '完美的计划永远不如现在就开始。把"下一步"改成"今天做第一步"——哪怕只做 5 分钟。',
     profile: ['M','L','M','L','L','M','M','L','M','L','L','M','H','H','M','L','H','M'],
+  rarity: 4.7,
+    nemesis: 'GOLD', nemesisReason: '你还在规划他已跳走',
+    soulmate: 'COPE', soulmateReason: '纸上谈兵焦虑联盟',
   },
   {
     code: 'IDOL',
@@ -208,6 +280,9 @@ export const personalities: PersonalityType[] = [
     description: '你是团队的核心、领导的左膀右臂、新人的导师、同事的救火队长、客户的定心丸。项目出 bug 找你、客户投诉找你、系统崩了找你、新人不会找你、甚至隔壁组有疑难杂症也来找你。你扛起了远超你职级的责任，但你的title和工资并没有跟上。你累但停不下来——因为你知道你一松手，整条线都会晃。你是那种"请假都要先把所有事交接完"的人。',
     growth: '你是不可替代的——这既是优势也是陷阱。学会授权、培养接班人，让自己从"不可或缺"变成"有选择权"。',
     profile: ['L','L','H','H','H','M','M','M','M','M','M','L','L','L','L','H','M','L'],
+  rarity: 3.7,
+    nemesis: 'JUMP', nemesisReason: '你撑着不走他随时要跑',
+    soulmate: 'SLAV', soulmateReason: '团队扛把子和执行王',
   },
 
   // ── 隐藏彩蛋型 ──────────────────────────────────────────
@@ -218,6 +293,7 @@ export const personalities: PersonalityType[] = [
     description: '根据你的回答——你不想跳槽、不想搞副业、不躺平也不焦虑、没有班味、不内耗、PUA 对你无效……你确定你还在上班吗？你要么已经财务自由在体验生活，要么你是老板本人在做这个测试，要么你是刚毕业第一周还没被社会毒打过。无论如何，你已经从牛马大军中超脱了。请把这个测试转发给还在苦海中挣扎的朋友们，让他们看看什么叫差距。',
     growth: '既然自由了，想想怎么帮助身边还在卷的人。自由的最高形式是让更多人自由。（如果你是第一周上班，保存好这个结果，半年后再测一次对比看看。）',
     profile: ['L','L','H','L','L','L','L','H','L','L','L','L','L','L','L','L','L','L'],
+    rarity: 0.01,
     isSpecial: true,
   },
   {
@@ -227,6 +303,7 @@ export const personalities: PersonalityType[] = [
     description: '你的摸鱼技术满级、心安理得满级，同时你毫无班味、毫不内卷、从不加班、PUA 免疫。系统分析的结论只有两种可能：你是全世界最成功的摸鱼选手，摸到了公司都感知不到你的存在；或者你根本就没有在上班但出于好奇跑来做了这个测试。如果是后者——说实话这个测试对你没什么参考价值，但你可以把结果截图发给正在上班的朋友，气死他们。',
     growth: '如果你真的没在上班：享受自由的同时找到一件让你兴奋的事。如果你真的在上班：你已经是摸鱼界的封顶选手了，考虑出本书吧。',
     profile: ['H','H','L','L','L','L','L','H','L','L','L','L','L','L','H','L','L','H'],
+    rarity: 0.04,
     isSpecial: true,
   },
   {
@@ -236,6 +313,7 @@ export const personalities: PersonalityType[] = [
     description: '你的周报是 AI 写的、邮件是 AI 写的、PPT 是 AI 做的、会议纪要是 AI 总结的、方案是 AI 出的、连这个测试你可能都想让 AI 帮你做。你已经把自己从"打工人"优化成了"提示词工程师"——区别是你的提示词是发给 AI 的，不是发给同事的。你的领导觉得你效率惊人，同事纳闷你好像啥都没做但啥都有产出。真相是：你已经成功地把自己自动化了。',
     growth: 'AI 替代的是重复劳动，但别让它替代了你的思考能力。试着一周不用 AI 独立干一件事——确认一下你还能独立生存。',
     profile: ['H','H','M','L','M','L','M','H','M','H','H','H','L','H','H','L','L','M'],
+    rarity: 0.7,
     isSpecial: true,
   },
 ]

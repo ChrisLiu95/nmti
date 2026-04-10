@@ -74,7 +74,10 @@ export default function QuestionScreen({ onAnswer, onComplete }: Props) {
     if (transition) return
     setDirection('in')
     setAnimating(true)
-    const t = setTimeout(() => setAnimating(false), 300)
+    const t = setTimeout(() => {
+      setAnimating(false)
+      setIsLocked(false)   // unlock only AFTER fade-in completes
+    }, 300)
     return () => clearTimeout(t)
   }, [current, transition])
 
@@ -133,7 +136,7 @@ export default function QuestionScreen({ onAnswer, onComplete }: Props) {
           onComplete()
         } else {
           setCurrent(nextQ)
-          setIsLocked(false)
+          // isLocked stays true — unlocked by fade-in useEffect
         }
       }, 250)
     }, 350)
@@ -149,7 +152,7 @@ export default function QuestionScreen({ onAnswer, onComplete }: Props) {
       } else {
         setTransition(null)
         setCurrent(nextQ)
-        setIsLocked(false)
+        // isLocked stays true — unlocked by fade-in useEffect
       }
     }, 2200)
     return () => clearTimeout(t)
@@ -157,10 +160,12 @@ export default function QuestionScreen({ onAnswer, onComplete }: Props) {
 
   function handleBack() {
     if (current === 0 || isLocked || transition) return
+    setIsLocked(true)
     setDirection('out')
     setAnimating(true)
     setTimeout(() => {
       setCurrent(c => c - 1)
+      // isLocked stays true — unlocked by fade-in useEffect
     }, 250)
   }
 

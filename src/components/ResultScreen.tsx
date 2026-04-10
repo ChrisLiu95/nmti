@@ -1,7 +1,9 @@
+import { useState, useRef } from 'react'
 import type { Profile } from '../types'
 import { MODELS } from '../utils/scoring'
 import type { MatchResult } from '../utils/scoring'
 import { Avatar } from '../data/avatars'
+import ShareCard from './ShareCard'
 
 interface Props {
   result: MatchResult
@@ -42,8 +44,14 @@ function getModelLevel(profile: Profile, modelIdx: number): 'H' | 'M' | 'L' {
 }
 
 export default function ResultScreen({ result, topMatches, profile, onRestart }: Props) {
-  const r = result.personality
+  const [viewIdx, setViewIdx] = useState(0)
+  const [showShareCard, setShowShareCard] = useState(false)
+  const topRef = useRef<HTMLDivElement>(null)
+
+  const viewing = topMatches[viewIdx] || result
+  const r = viewing.personality
   const isHidden = r.isSpecial
+  const isPrimary = viewIdx === 0
 
   const strengths = profile
     .map((tier, i) => ({ tier, tag: DIM_TAGS[i] }))
@@ -54,27 +62,28 @@ export default function ResultScreen({ result, topMatches, profile, onRestart }:
     .filter(d => d.tier === 'L')
     .slice(0, 4)
 
-  function handleShare() {
-    const text = `【NMTI 牛马型人格测试】\n我的牛马人格是 ${r.code}（${r.name}）· 匹配度 ${result.matchPct}%\n"${r.tagline}"\n来测测你是哪种牛马 →`
-    if (navigator.share) {
-      navigator.share({ title: 'NMTI 牛马型人格测试', text }).catch(() => {})
-    } else {
-      navigator.clipboard.writeText(text)
-        .then(() => alert('已复制到剪贴板！发给你的同事看看吧'))
-        .catch(() => alert('复制失败，请手动复制分享文案'))
-    }
+  function handleViewSwitch(idx: number) {
+    setViewIdx(idx)
+    topRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
+
 
   return (
     <div className="screen result-screen">
-      <div className="result-content">
+      <div className="result-content" ref={topRef}>
         {/* Report header */}
         <div className="report-header">
           <span className="report-stamp">NMTI</span>
           <span className="report-title">牛马绩效评定报告</span>
         </div>
 
-        {isHidden && (
+        {!isPrimary && (
+          <button className="back-primary-btn" onClick={() => handleViewSwitch(0)}>
+            ← 返回我的结果
+          </button>
+        )}
+
+        {isHidden && isPrimary && (
           <div className="hidden-badge">隐藏牛马解锁</div>
         )}
 
@@ -87,8 +96,15 @@ export default function ResultScreen({ result, topMatches, profile, onRestart }:
         <div className="result-code-wrap">
           <div className="result-code">{r.code}</div>
           <div className="result-name">{r.name}</div>
-          <div className="result-match">匹配度 {result.matchPct}%</div>
+          <div className="result-match">匹配度 {viewing.matchPct}%</div>
         </div>
+
+        {r.rarity != null && (
+          <div className="rarity-badge">
+            {r.rarity < 1 ? '隐藏款' : r.rarity < 3 ? '稀有款' : r.rarity < 5 ? '经典款' : '路人款'}
+            {' · 仅 '}{r.rarity < 0.1 ? '<0.1' : r.rarity}{'% 的牛马是这种'}
+          </div>
+        )}
 
         <div className="result-tagline">"{r.tagline}"</div>
 
@@ -140,6 +156,33 @@ export default function ResultScreen({ result, topMatches, profile, onRestart }:
           </div>
         )}
 
+        {/* Workplace Relationships */}
+        {(r.soulmate || r.nemesis) && (
+          <div className="relations-block">
+            <div className="analysis-label">职场关系</div>
+            {r.soulmate && (
+              <div className="relation-row">
+                <div className="relation-icon">💚</div>
+                <div className="relation-info">
+                  <div className="relation-label">灵魂牛友</div>
+                  <div className="relation-name">{r.soulmate}</div>
+                  <div className="relation-reason">{r.soulmateReason}</div>
+                </div>
+              </div>
+            )}
+            {r.nemesis && (
+              <div className="relation-row">
+                <div className="relation-icon">🔥</div>
+                <div className="relation-info">
+                  <div className="relation-label">职场天敌</div>
+                  <div className="relation-name">{r.nemesis}</div>
+                  <div className="relation-reason">{r.nemesisReason}</div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Growth */}
         <div className="growth-block">
           <div className="growth-label">HR 温馨提示</div>
@@ -150,8 +193,13 @@ export default function ResultScreen({ result, topMatches, profile, onRestart }:
         {topMatches.length > 1 && (
           <div className="top-matches-block">
             <div className="analysis-label">你的牛马基因组成</div>
+            <div className="analysis-hint">点击查看完整分析</div>
             {topMatches.map((m, i) => (
-              <div key={m.personality.code} className={`top-match-row ${i === 0 ? 'top-match-primary' : ''}`}>
+              <div
+                key={m.personality.code}
+                className={`top-match-row ${i === viewIdx ? 'top-match-active' : ''}`}
+                onClick={() => handleViewSwitch(i)}
+              >
                 <div className="top-match-rank">#{i + 1}</div>
                 <div className="top-match-avatar">
                   <Avatar code={m.personality.code} size={32} />
@@ -200,13 +248,17 @@ export default function ResultScreen({ result, topMatches, profile, onRestart }:
 
         {/* Actions */}
         <div className="result-actions">
-          <button className="btn-share" onClick={handleShare}>
-            转发气同事
+          <button className="btn-share" onClick={() => setShowShareCard(true)}>
+            生成分享卡片
           </button>
           <button className="btn-restart" onClick={onRestart}>
             不服再测
           </button>
         </div>
+
+        {showShareCard && (
+          <ShareCard result={result} profile={profile} onClose={() => setShowShareCard(false)} />
+        )}
       </div>
     </div>
   )

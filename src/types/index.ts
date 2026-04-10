@@ -18,4 +18,9 @@ export interface PersonalityType {
   growth: string
   profile: Profile
   isSpecial?: boolean
+  rarity?: number            // theoretical probability (%), e.g. 4.28
+  nemesis?: string           // code of workplace nemesis
+  nemesisReason?: string     // short funny reason
+  soulmate?: string          // code of workplace soulmate
+  soulmateReason?: string    // short funny reason
 }

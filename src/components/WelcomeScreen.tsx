@@ -28,7 +28,7 @@ export default function WelcomeScreen({ onStart, onGallery }: Props) {
             <span className="email-badge-icon">NM</span>
           </div>
           <div className="email-meta">
-            <div className="email-from">人力摸鱼资源部</div>
+            <div className="email-from">牛马资源部</div>
             <div className="email-addr">hr@niuma.corp</div>
           </div>
           <div className="email-date">{dateStr}</div>
@@ -41,58 +41,32 @@ export default function WelcomeScreen({ onStart, onGallery }: Props) {
         </div>
 
         <div className="email-subject">
-          <span className="email-urgent">【紧急】</span>
-          关于开展 2026 年度牛马人格普查的通知
+          马年到了，测测你是什么品种的牛马
         </div>
 
         {/* Email body */}
         <div className="email-body">
-          <p className="email-greeting">各位牛马好：</p>
-
           <p>
-            为配合集团「牛马画像精准化」战略部署，深入贯彻落实
-            <span className="email-highlight">「让每一头牛马都能被正确归类」</span>
-            的核心方针，经研究决定，现面向全体牛马开展 <b>NMTI 牛马型人格测试</b>。
+            有人是卷王之王，有人是摸鱼宗师，有人已经精神离职了。
+            <span className="email-highlight">你呢？</span>
           </p>
 
-          <div className="email-specs">
-            <div className="email-spec-row">
-              <span className="email-spec-label">测试内容</span>
-              <span className="email-spec-value">36 道灵魂拷问</span>
+          <div className="email-stats">
+            <div className="email-stat">
+              <span className="email-stat-num">36</span>
+              <span className="email-stat-label">道灵魂拷问</span>
             </div>
-            <div className="email-spec-row">
-              <span className="email-spec-label">评估维度</span>
-              <span className="email-spec-value">18 个牛马指标</span>
+            <div className="email-stat">
+              <span className="email-stat-num">28</span>
+              <span className="email-stat-label">种牛马命运</span>
             </div>
-            <div className="email-spec-row">
-              <span className="email-spec-label">可能结局</span>
-              <span className="email-spec-value">28 种牛马命运</span>
-            </div>
-            <div className="email-spec-row">
-              <span className="email-spec-label">预计耗时</span>
-              <span className="email-spec-value">5 分钟（摸鱼时间足够）</span>
+            <div className="email-stat">
+              <span className="email-stat-num">5</span>
+              <span className="email-stat-label">分钟出结果</span>
             </div>
           </div>
 
-          <div className="email-scope">
-            <span className="email-scope-label">覆盖领域：</span>
-            <div className="email-tags">
-              {['摸鱼玄学', '内卷经', '社畜魂', '表演术', '逃离计划', '精神状态'].map(m => (
-                <span key={m} className="model-tag">{m}</span>
-              ))}
-            </div>
-          </div>
-
-          <p className="email-deadline">请各位牛马于今日内完成测试。逾期未测者，视为自愿放弃被归类的权利。</p>
-
-          <p className="email-sign">
-            此通知。
-            <br/>
-            <br/>
-            <span className="email-sign-dept">人力摸鱼资源部</span>
-            <br/>
-            <span className="email-sign-system">牛马绩效评估系统 NMTI v2.0</span>
-          </p>
+          <p className="email-deadline">温馨提示：测试全程可摸鱼完成，不计入考勤，不影响年终。</p>
         </div>
 
         {/* CTA */}
